@@ -26,11 +26,10 @@ pipeline {
                 sh 'docker ps'
             }
         }
-        stage('Docker stop') {
+       stage('Docker Stop') {
             steps {
-                sh 'docker stop nginx'
-                sh 'docker prune -a'
-            }
+               sh 'docker stop $(docker ps -q --filter "ancestor=nginx")'
+           }
         }
     }
 }
