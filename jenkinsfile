@@ -26,7 +26,7 @@ pipeline {
                 sh 'docker ps'
             }
         }
-        stage('Docker Image and PS') {
+        stage('Docker stop') {
             steps {
                 sh 'docker stop nginx'
                 sh 'docker prune -a'
