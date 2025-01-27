@@ -16,7 +16,7 @@ pipeline {
 
         stage('Docker Run') {
             steps {
-                sh 'docker run -d -p 80:80 nginx'
+                sh 'docker run -d -p 800:800 nginx'
             }
         }
 
