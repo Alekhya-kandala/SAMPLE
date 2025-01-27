@@ -26,5 +26,11 @@ pipeline {
                 sh 'docker ps'
             }
         }
+        stage('Docker Image and PS') {
+            steps {
+                sh 'docker stop nginx'
+                sh 'docker prune -a'
+            }
+        }
     }
 }
