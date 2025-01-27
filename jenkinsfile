@@ -7,10 +7,12 @@ pipeline {
                 echo '*Hello World*'
             }
         }
+    }
     stages {
         stage('Docker Build') {
           steps {
             sh 'docker pull nginx'
+          }
         }
     }
    stages {
@@ -19,6 +21,7 @@ pipeline {
                 sh 'docker run -d -p 80:80 nginx'
             }
         }
+  }
     stages {
         stage('Docker image') {
             steps {
